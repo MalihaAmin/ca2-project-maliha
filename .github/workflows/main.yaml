@@ -61,7 +61,7 @@ jobs:
         IMAGE_TAG: ${{ env.IMAGE_TAG }}
 
     # Set the target AKS cluster.
-    - uses: Azure/aks-set-context@v3
+    - uses: Azure/aks-set-context@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         cluster-name: ${{ env.CLUSTER_NAME }}
