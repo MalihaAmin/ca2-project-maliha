@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: front_end-deployment
+  name: front-end-deployment
 spec:
   selector:
     matchLabels:
-      app: front_end
+      app: front-end
   replicas: 1
   template:
     metadata:
       labels:
-        app: front_end
+        app: front-end
     spec:
       containers:
-      - name: front_end
+      - name: front-end
         image: __DOCKER_REPOSITORY__/__IMAGE_NAME__:__IMAGE_TAG__
         ports:
         - containerPort: 80
@@ -37,10 +37,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: front_end-service
+  name: front-end-service
 spec:
   selector:
-    app: front_end
+    app: front-end
   ports:
   - protocol: TCP
     port: 80
