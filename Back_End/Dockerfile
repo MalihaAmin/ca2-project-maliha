@@ -5,15 +5,17 @@ WORKDIR /usr/src/app
 COPY ./pom.xml ./
 COPY ./src ./src
 
-# Install wget and tar
-RUN apt-get update && apt-get install -y wget tar
+# Set environment variables for Maven installation
+ENV MAVEN_VERSION 3.8.4
+ENV MAVEN_HOME /usr/share/maven
+ENV MAVEN_OPTS="-Xms256m -Xmx512m"
 
-# Install Maven
-RUN wget -q "https://archive.apache.org/dist/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz" && \
-    tar -xzf "apache-maven-3.8.4-bin.tar.gz" && \
-    rm "apache-maven-3.8.4-bin.tar.gz" && \
-    mv "apache-maven-3.8.4" "/usr/share/maven" && \
-    ln -s "/usr/share/maven/bin/mvn" /usr/bin/mvn
+# Download and install Maven
+RUN mkdir -p $MAVEN_HOME && \
+    curl -fsSL -o /tmp/apache-maven.tar.gz "https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" && \
+    tar -xzf /tmp/apache-maven.tar.gz -C $MAVEN_HOME --strip-components=1 && \
+    rm /tmp/apache-maven.tar.gz && \
+    ln -s $MAVEN_HOME/bin/mvn /usr/bin/mvn
 
 # Expose the port
 EXPOSE 22137
