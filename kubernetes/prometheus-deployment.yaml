@@ -31,7 +31,7 @@ metadata:
   name: prometheus-service
 spec:
   selector:
-    app: front-end
+    app: prometheus-server
   ports:
   - protocol: TCP
     port: 80
