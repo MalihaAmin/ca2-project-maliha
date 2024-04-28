@@ -29,7 +29,8 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: front-end-service
+  name: prometheus-service
+  namespace: prometheus
 spec:
   selector:
     app: front-end
@@ -44,6 +45,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: prometheus-pvc
+  namespace: prometheus
 spec:
   accessModes:
     - ReadWriteOnce
