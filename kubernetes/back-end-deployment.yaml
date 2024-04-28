@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: back-end
-        image: __DOCKER_REPOSITORY__/__IMAGE_NAME__:__IMAGE_TAG__
+        image: __DOCKER_REPOSITORY__/__IMAGE_NAME_BE__:__IMAGE_TAG__
         ports:
         - containerPort: 80
         resources:

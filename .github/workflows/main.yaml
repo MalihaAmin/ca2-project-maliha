@@ -95,7 +95,8 @@ jobs:
     - uses: Azure/k8s-deploy@v1
       with:
         manifests: |
-          kubernetes/app-deployment.yaml
+          kubernetes/front-end-deployment.yaml
+          kubernetes/backend-end-deployment.yaml
     
     - name: Run Kube-Bench to check cluster config
       continue-on-error: true
