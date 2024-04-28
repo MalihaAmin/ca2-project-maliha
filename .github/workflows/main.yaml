@@ -96,7 +96,7 @@ jobs:
       with:
         manifests: |
           kubernetes/front-end-deployment.yaml
-          kubernetes/backend-end-deployment.yaml
+          kubernetes/back-end-deployment.yaml
     
     - name: Run Kube-Bench to check cluster config
       continue-on-error: true
