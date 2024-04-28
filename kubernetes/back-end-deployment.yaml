@@ -19,8 +19,8 @@ spec:
         - containerPort: 8080
         resources:
           limits:
-            cpu: 300m
-            memory: "100Mi"
+            cpu: 800m
+            memory: "1000Mi"
           requests:
             cpu: 100m
             memory: "50Mi"
@@ -45,4 +45,4 @@ spec:
   - protocol: TCP
     port: 8080
     targetPort: 8080
-  type: ClusterIP #NodePort
+  type: LoadBalancer #NodePort

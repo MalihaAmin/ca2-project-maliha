@@ -19,14 +19,14 @@ spec:
         - containerPort: 80
         resources:
           limits:
-            cpu: 300m
-            memory: "100Mi"
+            cpu: 800m
+            memory: "1000Mi"
           requests:
             cpu: 100m
             memory: "50Mi"
-        # env:
-        #   - name: ConnectionStrings__ProductsContext
-        #     valueFrom:
+        env:
+          - name: back-end-service
+            value: back-end-service
         #       configMapKeyRef:
         #         name: mssql-connection-configmap
         #         key: db-connection-string
