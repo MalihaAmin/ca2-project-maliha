@@ -21,4 +21,4 @@ RUN mkdir -p $MAVEN_HOME && \
 EXPOSE 8080
 
 # Command to run the application
-CMD ["mvn", "spring-boot:run"]
+CMD ["mvn", "test", "spring-boot:run"]
