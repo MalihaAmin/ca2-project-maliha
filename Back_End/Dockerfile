@@ -18,7 +18,7 @@ RUN mkdir -p $MAVEN_HOME && \
     ln -s $MAVEN_HOME/bin/mvn /usr/bin/mvn
 
 # Expose the port
-EXPOSE 22137
+EXPOSE 8080
 
 # Command to run the application
 CMD ["mvn", "spring-boot:run"]

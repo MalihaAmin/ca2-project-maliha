@@ -16,7 +16,7 @@ spec:
       - name: back-end
         image: __DOCKER_REPOSITORY__/__IMAGE_NAME_BE__:__IMAGE_TAG__
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         resources:
           limits:
             cpu: 300m
@@ -43,6 +43,6 @@ spec:
     app: back-end
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
-  type: NodePort #NodePort
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP #NodePort
