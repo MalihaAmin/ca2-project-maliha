@@ -5,6 +5,9 @@ WORKDIR /usr/src/app
 COPY ./pom.xml ./
 COPY ./src ./src
 
+# Install wget and tar
+RUN apt-get update && apt-get install -y wget tar
+
 # Install Maven
 RUN wget -q "https://archive.apache.org/dist/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz" && \
     tar -xzf "apache-maven-3.8.4-bin.tar.gz" && \
