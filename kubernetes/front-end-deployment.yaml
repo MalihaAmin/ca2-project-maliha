@@ -16,7 +16,7 @@ spec:
       - name: front-end
         image: __DOCKER_REPOSITORY__/__IMAGE_NAME_FE__:__IMAGE_TAG__
         ports:
-        - containerPort: 80
+        - containerPort: 22137
         resources:
           limits:
             cpu: 800m
@@ -43,6 +43,6 @@ spec:
     app: front-end
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 22137
+    targetPort: 22137
   type: LoadBalancer #NodePort
