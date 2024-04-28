@@ -67,7 +67,9 @@ public class Persistence {
 
       MongoClientSettings settings = MongoClientSettings.builder()
               .codecRegistry(pojoCodecRegistry)
-              .applyConnectionString(mongoUri).build();
+              .applyConnectionString(mongoUri)
+              .sslInvalidHostNameAllowed(true)
+              .build();
 
       mongoClient = null;
       try {
