@@ -1,22 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: front-end-deployment
+  name: app-deployment
 spec:
   selector:
     matchLabels:
-      app: front-end
+      app: app-deployment
   replicas: 1
   template:
     metadata:
       labels:
-        app: front-end
+        app: app-deployment
     spec:
       containers:
-      - name: front-end
-        image: __DOCKER_REPOSITORY__/__IMAGE_NAME__:__IMAGE_TAG__
+      - name: bank-end
+        image: __DOCKER_REPOSITORY__/__IMAGE_NAME__BE:__IMAGE_TAG__
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            cpu: 300m
+            memory: "100Mi"
+          requests:
+            cpu: 100m
+            memory: "50Mi"
+      - name: backend
+        image: __DOCKER_REPOSITORY__/__IMAGE_NAME__FE:__IMAGE_TAG__
         resources:
           limits:
             cpu: 300m
