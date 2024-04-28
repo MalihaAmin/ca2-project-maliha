@@ -21,7 +21,7 @@ var body =  '</head><body><div id="container">' +
 				 '<input class="input" type="text" name="name"/><br />'+			
 				 '<label class="control-label">Ingredients:</label>' +
 				 '<input class="input" type="text" name="ingredients" /><br />'+
-				 '<label class="control-label">Prep Time:</label>' +
+				 '<label class="control-label">Preparation Time:</label>' +
 				 '<input class="input" type="number" name="prepTimeInMinutes" /><br />';
 
 var submitButton = '<button class="button button1">Submit</button>' +
